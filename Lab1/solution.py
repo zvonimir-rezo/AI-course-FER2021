@@ -2,6 +2,9 @@ import sys
 import heapq
 
 ## NODE CLASS
+from queue import PriorityQueue
+
+
 class Node:
     def __init__(self, name, parent, cost):
         self.name = name
@@ -135,10 +138,11 @@ def bfs(starting_point, finishing_points, states_succ):
     return solution, len(visited), len(result_path), float(sum(costs)), " => ".join(map(str, result_path))
 
 
-# UNIFIED COST SEARCH
+# UNIFORM COST SEARCH
 def ucs(starting_point, finishing_points, states_succ):
     open_q = []
     heapq.heappush(open_q, Node(starting_point, None, 0))
+    heapq.heapify(open_q)
     visited = set()
     solution = None
     while open_q:
@@ -167,6 +171,7 @@ def a_star(starting_point_name, finishing_points, states_succ, heuristics_path):
     open_dict = {}
     visited_dict = {}
     open_q = []
+    heapq.heapify(open_q)
     solution = None
     starting_node = HeuristicNode(starting_point_name, None, 0, heuristics[starting_point_name])
     open_dict[starting_point_name] = starting_node
@@ -174,41 +179,42 @@ def a_star(starting_point_name, finishing_points, states_succ, heuristics_path):
 
     while open_q:
         node = heapq.heappop(open_q)
-        visited_dict[node.name] = node
-
+        open_dict.pop(node.name)
         if node.name in finishing_points:
             solution = node
             break
 
-        for next_state in sorted(states_succ[node.name]):
-            if next_state[0] not in visited_dict:
-                next_node = HeuristicNode(next_state[0], node, int(next_state[1]), heuristics[next_state[0]])
+        visited_dict[node.name] = node
 
-                open_node = None
-                visited_node = None
+        for next_state in states_succ[node.name]:
+            next_node = HeuristicNode(next_state[0], node, int(next_state[1]), heuristics[next_state[0]])
 
-                # CHECK IF THE STATE ALREADY EXISTS IN EITHER OPEN OR VISITED SET
-                if next_state[0] in open_dict:
-                    open_node = open_dict[next_state[0]] #node from open dict
-                if next_state[0] in visited_dict:
-                    visited_node = visited_dict[next_state[0]] #node from visited dict
+            open_node = None
+            visited_node = None
 
-                if (open_node and open_node.total_cost < next_node.total_cost) or (visited_node and visited_node.total_cost < next_node.total_cost):
-                    continue
+            # CHECK IF THE STATE ALREADY EXISTS IN EITHER OPEN OR VISITED SET
+            if next_state[0] in open_dict:
+                open_node = open_dict[next_state[0]] #node from open dict
+            if next_state[0] in visited_dict:
+                visited_node = visited_dict[next_state[0]] #node from visited dict
 
-                # REMOVE FROM OPEN LIST AND DICTIONARY IF THIS CODE IS REACHED
-                if open_node:
-                    open_dict.pop(next_node.name)
-                    open_q.pop(next_node.name)
-                if visited_node:
-                    visited_dict.pop(next_node.name)
+            if (open_node is not None and open_node < next_node) or (visited_node is not None and visited_node < next_node):
+                continue
 
-                heapq.heappush(open_q, next_node)
-                open_dict[node.name] = node
+            # REMOVE FROM OPEN LIST AND DICTIONARY
+            if open_node is not None:
+                open_dict.pop(open_node.name)
+                open_q = [i for i in open_q if i.name != open_node.name]
+            if visited_node is not None:
+                visited_dict.pop(visited_node.name)
+
+            heapq.heappush(open_q, next_node)
+            open_dict[next_node.name] = next_node
 
     result_path = []
     costs = []
-    get_path(solution, result_path, costs)
+    if solution is not None:
+        get_path(solution, result_path, costs)
 
     return solution, len(visited_dict), len(result_path), float(sum(costs)), " => ".join(map(str, result_path))
 
