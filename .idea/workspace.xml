@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a0a53371-2161-455d-a35c-98073cd69537" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Lab2/cooking_examples/cooking_coffee.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab2/cooking_examples/cooking_coffee_input.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/UI_lab1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/UI_lab1.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Lab2/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,7 +31,9 @@
     </file-type-list>
   </component>
   <component name="ProjectId" id="1qVhjLqiRZpA5xTyL70Rj8L1D16" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -38,7 +42,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../SRS" />
+    <property name="last_opened_file_path" value="D:/Python" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
@@ -86,6 +90,9 @@
       <workItem from="1618399169121" duration="26708000" />
       <workItem from="1618563258435" duration="22612000" />
       <workItem from="1619688675372" duration="17064000" />
+      <workItem from="1621447188831" duration="2541000" />
+      <workItem from="1621449820125" duration="1499000" />
+      <workItem from="1621451564865" duration="6025000" />
     </task>
     <servers />
   </component>
@@ -105,7 +112,7 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/UI_lab1$solution.coverage" NAME="solution Coverage Results" MODIFIED="1617688999169" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/UI_lab$solution.coverage" NAME="solution Coverage Results" MODIFIED="1619797609113" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/UI_lab1$solution.coverage" NAME="solution Coverage Results" MODIFIED="1617688999169" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
